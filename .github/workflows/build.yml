@@ -1,0 +1,35 @@
+name: compile-pdf
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install LaTeX
+        run: sudo apt-get install texlive texlive-xetex texlive-fonts-extra
+
+      - name: Compile PDF
+        run: |
+          make
+          cd output
+          rm -f *.aux *.log *.bbl *.blg *.out *.toc
+          touch .nojekyll
+          cd ..
+      - name: Push to gh-pages
+        if: success() && github.event_name == 'push'
+        # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
+        uses: peaceiris/actions-gh-pages@8a36f3edfc5d1cbae6b09e6f5a7d7b19e5b7a73b
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
