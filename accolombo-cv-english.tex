@@ -1,8 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-A general CV with all my experiences
-
-Based on the template of the Leo Uieda's CV
-
+% A general CV with all my experiences
+%
+% Based on the template of Leo Uieda's CV
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[11pt, a4paper]{article}
@@ -56,6 +56,9 @@ Based on the template of the Leo Uieda's CV
 % Template configuration
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% Disable hyphenation
+\usepackage[none]{hyphenat}
+
 % Control the font size
 \usepackage{anyfontsize}
 
@@ -76,10 +79,10 @@ Based on the template of the Leo Uieda's CV
 % Left column are the dates, right column the entries.
 \usepackage{environ}
 \NewEnviron{EntriesTable}{
-    \TablePad
-    \begin{tabularx}{\textwidth}{@{}p{0.15\textwidth} p{0.85\textwidth}@{}}
-        \BODY
-    \end{tabularx}
+\TablePad
+\begin{tabularx}{\textwidth}{@{}p{0.15\textwidth} p{0.85\textwidth}@{}}
+    \BODY
+\end{tabularx}
 }
 
 % Macros to add links
@@ -107,18 +110,6 @@ Based on the template of the Leo Uieda's CV
 % and the spacing between rows in tables
 \renewcommand{\arraystretch}{1.2}
 
-% Set the spacing for sections
-%\usepackage{titlesec}
-%\titlespacing{\section}{0pt}{0cm}{0.3cm}
-%\titlespacing{\subsection}{0pt}{0.3cm}{0.3cm}
-
-% Disable number of sections. Use this instead of "section*" so that the sections still
-% appear as PDF bookmarks. Otherwise, would have to add the table of contents entries
-% manually.
-\makeatletter
-\renewcommand{\@seccntformat}[1]{}
-\makeatother
-
 % Remove space between items in itemize and enumerate
 \usepackage{enumitem}
 \setlist{nosep}
@@ -133,6 +124,18 @@ Based on the template of the Leo Uieda's CV
 \usepackage{sectsty}
 \sectionfont{\vspace{0.1cm}\bfseries\fontsize{12pt}{0}\selectfont\uppercase}
 \subsectionfont{\vspace{0.1cm}\mdseries\fontsize{12pt}{0}\selectfont\uppercase}
+
+% Set the spacing for sections
+%\usepackage{titlesec}
+%\titlespacing{\section}{0pt}{0cm}{0.3cm}
+%\titlespacing{\subsection}{0pt}{0.3cm}{0.3cm}
+
+% Disable number of sections. Use this instead of "section*" so that the sections still
+% appear as PDF bookmarks. Otherwise, would have to add the table of contents entries
+% manually.
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
 
 % Set fancy headers
 \usepackage{fancyhdr}
@@ -164,7 +167,6 @@ Based on the template of the Leo Uieda's CV
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
 \begin{document}
 
 % No header for the first page
@@ -174,12 +176,12 @@ Based on the template of the Leo Uieda's CV
 
 % HEADER
 {\fontsize{20pt}{0}\selectfont \MyName}	\\[0.3cm]
-\rule{\textwidth}[0.2pt]
+\rule{\textwidth}{0.2pt}
 \begin{minipage}[t]{0.595\textwidth}
 	%\Affiliation
 	%\\
 	%\Address
-	ABCDE EJAJHA
+	ABCDE
 \end{minipage}
 \begin{minipage}[t]{0.405\textwidth}
   \begin{flushright}
@@ -187,7 +189,7 @@ Based on the template of the Leo Uieda's CV
   \\
     email: \href{mailto:\Email}{\Email}
     \\
-    Website: \href{https://www.\PersonalWebsite}{\PersonalWebsite}
+    Website: \href{https://www.\Website}{\Website}
   \end{flushright}
 \end{minipage}
 
