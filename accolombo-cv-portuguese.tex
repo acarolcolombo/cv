@@ -1,0 +1,489 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+
+% Identifying information
+\newcommand{\Title}{Curriculum Vit\ae}
+\newcommand{\FirstName}{Ana Caroline}
+\newcommand{\LastName}{Colombo}
+\newcommand{\Initials}{AC}
+\newcommand{\MyName}{\FirstName\ \LastName}
+\newcommand{\Me}{\textbf{\LastName, \Initials}}  % For citations
+\newcommand{\Email}{acarolcolombo@gmail.com}
+%\newcommand{\Website}{}
+%\newcommand{\ORCID}{}
+\newcommand{\phone}{+44 0757 718 7908}
+%\newcommand{\Affiliation}{}
+\newcommand{\Address}{
+    St Andrew Street, Alexander Court - Ap 58, L3 5XY- Liverpool, UK.
+}
+
+% Names for citing coauthors
+\newcommand{\Amanda}{De Oliveira, AR}
+\newcommand{\Adriano}{Reimer, AE}
+\newcommand{\Brandao}{Brandão, ML}
+\newcommand{\Muthu}{Muthuraju, S}
+\newcommand{\Rafael}{Almada, RC}
+\newcommand{\Marcio}{Rodrigues, ML}
+\newcommand{\Viviane}{Saito, VM}
+\newcommand{\Teddy}{Talbot, T}
+\newcommand{\Pag}{Rizzo, J}
+\newcommand{\Zamith}{Zamith-Miranda, D}
+\newcommand{\Va}{Silva, VKA}
+\newcommand{\Jeremy}{Allegood, JC}
+\newcommand{\Casadevall}{Casadevall, A}
+\newcommand{\Maurizio}{Del Poeta, M}
+\newcommand{\Josh}{Nosanchuk, JD}
+\newcommand{\Kronstad}{Kronstad, JW}
+\newcommand{\Nayara}{Barroca, NCB}
+\newcommand{\Mariana}{Guarda, MD}
+\newcommand{\Naiara}{Silva, NT}
+\newcommand{\Antonella}{Rella, A}
+\newcommand{\Tyler}{Normile, T}
+\newcommand{\Luna}{Joffe, LS}
+\newcommand{\Patricia}{Tavares, PM}
+\newcommand{\Glauber}{Araújo, GRS}
+\newcommand{\Susana}{Frases, S}
+\newcommand{\Erika}{Orner, EP}
+\newcommand{\Amir}{Farnoud, AM}
+\newcommand{\Bettina}{Fries, BC}
+\newcommand{\Brian}{Sheridan, B}
+\newcommand{\Leo}{Nimrichter, L}
+
+% Template configuration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Control the font size
+\usepackage{anyfontsize}
+
+% Template variables for styling
+\newcommand{\TablePad}{\vspace{-0.4cm}}
+\newcommand{\SoftwareTitle}[1]{{\bfseries #1}}
+\newcommand{\TableTitle}[1]{{\fontsize{12pt}{0}\selectfont \itshape #1}}
+\newcommand{\Invited}{[\textbf{Invited}] -- }
+
+% For fancy and multipage tables
+\usepackage{tabularx}
+\usepackage{ltablex}
+
+% Define a new environment to place all CV entries in a 2-column table.
+% Left column are the dates, right column the entries.
+\usepackage{environ}
+\NewEnviron{EntriesTable}{
+    \TablePad
+    \begin{tabularx}{\textwidth}{@{}p{0.15\textwidth} p{0.85\textwidth}@{}}
+        \BODY
+    \end{tabularx}
+}
+
+% Macros to add links
+\newcommand{\DOI}[1]{doi:\href{https://doi.org/#1}{#1}}
+\newcommand{\Youtube}[1]{[recording: \href{https://youtu.be/#1}{youtu.be/#1}]}
+% Macros to set the year and duration on the left column
+\newcommand{\Duration}[2]{\fontsize{10pt}{0}\selectfont #1--#2}
+\newcommand{\Year}[1]{\fontsize{10pt}{0}\selectfont #1}
+
+% Define command to insert month name and year as date
+\usepackage{datetime}
+\newdateformat{monthyear}{\monthname[\THEMONTH], \THEYEAR}
+
+% Set the page margins
+\usepackage[left=0.5in,right=0.5in,top=0.7in,bottom=0.7in]{geometry}
+
+% No indentation
+\setlength\parindent{0cm}
+
+% Increase the line spacing
+\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\arraystretch}{1.2}
+
+% Set the spacing for sections
+\usepackage{titlesec}
+\titlespacing{\section}{0pt}{0cm}{0.3cm}
+%\titlespacing{\subsection}{0pt}{0.3cm}{0.3cm}
+
+% Remove space between items in itemize and enumerate
+\usepackage{enumitem}
+\setlist{nosep}
+
+% Use custom colors
+\usepackage[usenames,dvipsnames]{xcolor}
+
+% Set fonts. Requires compilation with xelatex
+%\usepackage{fontspec}
+%\setmainfont[BoldFont=SourceSansPro-Semibold]{SourceSansPro-Light}
+%\setmonofont{Source Code Pro}
+
+% Configure the font style for sections
+\usepackage{sectsty}
+\sectionfont{\vspace{0.1cm}\bfseries\fontsize{12pt}{0}\selectfont\uppercase}
+\subsectionfont{\vspace{0.1cm}\mdseries\fontsize{12pt}{0}\selectfont\uppercase}
+
+% Set fancy headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\chead{
+    \itshape
+    \fontsize{10pt}{12pt}\selectfont
+    \MyName
+    \hspace{0.2cm} -- \hspace{0.2cm}
+    \Title
+    \hspace{0.2cm} -- \hspace{0.2cm}
+    \monthyear\today
+}
+\rhead{}
+\cfoot{\fontsize{10pt}{0}\selectfont \thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% Metadata for the PDF output and control of hyperlinks
+\usepackage[colorlinks=true]{hyperref}
+\hypersetup{
+    pdftitle={\MyName\ - \Title},
+    pdfauthor={\MyName},
+    linkcolor=blue,
+    citecolor=blue,
+    filecolor=black,
+    urlcolor=MidnightBlue
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+
+% No header for the first page
+\thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% HEADER1
+\begin{center}
+	{\fontsize{20pt}{0}\selectfont \MyName}
+	\\[0.3cm]
+	{\fontsize{10pt}{0}\selectfont
+		%\Affiliation
+		%\\[0.2cm]
+		%\Address
+		%\\[0.08cm]
+		email: \href{mailto:\Email}{\Email}
+		\, | \,
+		phone: \href{mailto:\phone}{\phone}
+		\\[0.3cm]
+		%ORCID: \href{http://orcid.org/\ORCID}{\ORCID}
+		%\, | \,
+		%website: \href{http://\Website}{\Website}
+
+
+
+	}
+\end{center}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Experiência Profissional}
+
+\begin{EntriesTable}
+
+	\Duration{06/2019}{08/2019}  &
+	\textbf{Estagiário no Arboreto no Havaí}
+	\newline
+	\textit{Lyon Arboretum - Honolulu, HI, EUA.}
+	\newline
+	Experiência híbrida: parte do tempo no Departamento de Educação e parte do tempo nos Departamentos de Grounds (Terreno) e de Horticultura, e no Laboratório de Micropropagação e Sementes. \textbullet \ Desenvolveu material para aula de campo do Terceiro Ano sobre adaptações de plantas \textbullet \ Ajudou no acampamento de verão para crianças do Jardim de Infância até Ensino Básico \textbullet \ Liderou passeio guiado no arboreto \textbullet \ Participou de atividades de divulgação em eventos públicos \textbullet \ Aprendeu e ajudou com as técnicas de propagação e identificação de plantas, e ajudou a manter os jardins e as trilhas.
+	\\
+
+	\Duration{03/2019}{06/2019}  &
+	\textbf{Assistente de Credenciamento de Médicos}
+	\newline
+	\textit{HMAA/HWMG - Honolulu, HI, EUA.}
+	\newline
+	\textbullet \ Contatou médicos para refazer o credenciamento no sistema da companhia de plano de saúde \textbullet \ Organizou dados e documentos.
+	\\
+
+	\Duration{08/2016}{12/2017}  &
+	\textbf{Especialista de Apoio à Pesquisa},
+	\newline
+	\textit{Stony Brook University, Stony Brook, NY, EUA.}
+	\newline
+	\textbullet \ Gerenciou projetos independentemente \textbullet \ Estabeleceu colaborações externas \textbullet \ Processou e analisou dados \textbullet \ Escreveu e participou de duas publicações científicas \textbullet \ Apresentou o trabalho em conferências \textbullet\ Conduziu pesquisa na área de biomedicina e realizou experimentos laboratoriais.
+	\\
+
+\end{EntriesTable}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Educação}
+
+\begin{EntriesTable}
+    \Year{2018}  &
+    \textbf{Doutorado em Química Biológica}, Universidade Federal do Rio de Janeiro (UFRJ).
+    \\
+    \Year{2014}  &
+    \textbf{Mestrado em Psicobiologia}, Universidade de São Paulo (USP -Ribeirão Preto).
+    \\
+    \Year{2011}  &
+    \textbf{Bacharelado em Ciências Biológicas}, Universidade Estadual Paulista (UNESP-Botucatu).
+    \\
+    \Year{2010}  &
+    \textbf{Licenciatura em Ciências Biológicas}, Universidade Estadual Paulista (UNESP-Botucatu).
+
+
+\end{EntriesTable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Educação Continuada}
+
+%\subsection*{Peer-Reviewed}
+
+\begin{EntriesTable}
+    \Year{2019 (1 mês)}  &
+    \textbf{101 Web Development} -- DevLeague - Honolulu, HI, EUA.
+    \\
+\end{EntriesTable}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section*{Grants \& Fellowships}
+
+%\begin{EntriesTable}
+%    \Duration{2018}{2020}  &    NSF-EAR: ``The EarthScope/GMT Analysis and Visualization Toolbox''.
+%    PI: \Paul, \textbf{co-PI}: \Me, co-PI: \Bridget.
+%    University of Hawai'i at M\={a}noa.
+%    Amount: \$174,975.
+%    Award ID: 1829371.
+%\end{EntriesTable}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Experiência Científica}
+
+\begin{EntriesTable}
+
+	\Duration{2010}{2016}  &
+	\textbf{Neurociência, Comportamento e Farmacologia}
+
+	\\
+
+	\Duration{2014}{2018}  &
+	\textbf{Microbiologia, Bioquímica e Imunologia}
+
+
+
+\end{EntriesTable}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Principais Publicações}
+
+%\subsection*{Peer-Reviewed}
+
+\begin{EntriesTable}
+	\Year{2019}  &
+	\Me, \Antonella, \textit{et al.}
+	\emph{Cryptococcus neoformans} glucuronoxylomannan and sterylglucoside are required for host protection in an animal vaccination model.
+	\emph{mBio},
+	 \DOI{10.1128/mBio.02909-18}.
+	\\
+	\Year{2015}  &
+	\Me, \Marcio.
+	Fungal colonization of the brain: anatomopathological
+	aspects of neurological cryptococcosis.
+	\emph{Annals of the Brazilian Academy of Sciences},
+	\DOI{10.1590/0001-3765201520140704}.
+	\\
+	\Year{2013}  &
+	\Me, \Amanda, \textit{et al.}
+	Dopaminergic mechanisms underlying catalepsy, fear and anxiety: Do
+	they interact?.
+	\emph{Behavioural Brain Research},
+	\DOI{10.1016/j.bbr.2013.10.002}.
+	\\
+\end{EntriesTable}
+
+
+
+%\subsection*{Peer-Reviewed Conference proceedings}
+
+%\begin{EntriesTable}
+%\Year{2014}  &
+%    \Figura, \Val, \Me, \Bi, \JB.
+%    A Single Euler Solution Per Anomaly,
+%    \emph{76th EAGE Conference and Exhibition 2014},
+%    \DOI{10.3997/2214-4609.20140891}.
+%    \\
+%\end{EntriesTable}
+
+%\subsection*{Open Datasets}
+
+%\begin{EntriesTable}
+%\end{EntriesTable}
+
+
+%\subsection*{Open-source Software}
+
+%\end{EntriesTable}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Experiência de Ensino}
+
+%\subsection*{Undergraduate -- instructor}
+
+\begin{EntriesTable}
+    \Year{2020}  &
+    \textbf{Zoologia} -- Aquário (Educador)
+    \newline
+    Departamento de Educação do World Museum (Museu do Mundo), Liverpool, GB.
+    \\
+    \Duration{2018}{2019}  &
+    \textbf{Botânica} -- Jardim de Infância até Quarto Ano (Professora Assistente)
+    \newline
+    Departamento de Educação do Lyon Arboretum, Honolulu, EUA.
+    \\
+    \Year{2015}  &
+    \textbf{Bioquímica} -- Graduação em Medicina  (Professora Assistente)
+    \newline
+    Universidade Federal do Rio de Janeiro, Brasil.
+    \\
+    \Year{2015}  &
+    \textbf{Sistema neuro-imuno-endócrino} -- Pós-Graduação em Química Biológica (Coordenadora do Grupo)
+    \newline
+    Universidade Federal do Rio de Janeiro, Brasil.
+    \\
+    \Year{2010}  &
+    \textbf{Biologia} -- Ensino Médio (Professora Assistente)
+    \newline
+    Escola Estadual Professor Francisco Guedelha, Botucatu, Brasil.
+    \\
+    \Year{2007}  &
+    \textbf{Literatura} -- Curso Preparatório para o Vestibular (Professora)
+    \newline
+    Universidade Estadual Paulista, Brasil.
+\end{EntriesTable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section*{Student supervision}
+
+%\begin{EntriesTable}
+%\Duration{2017}{}  &
+%    Santiago R. Soler (PhD student -- co-Advisor)
+%    \newline
+%    Instituto Geofísico Sismológico Volponi, Universidad Nacional de San Juan, Argentina.
+%    \newline
+%    Advisor: Mario E. Gimenez
+%	\\
+%\end{EntriesTable}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Option1
+\section*{Voluntariado e Atividades de Extensão}
+
+\begin{EntriesTable}
+
+\Year{2020}  &
+    Aquário do World Museum,
+    Liverpool, GB -- \textbf{Educador.}
+    \\
+\Duration{2018}{2019}  &
+    Lyon Arboretum, Honolulu, EUA -- \textbf{Atendente do Centro de Visitantes.}
+    \\
+\Duration{2018}{2019} &
+    Lyon Arboretum, Honolulu, EUA -- \textbf{Professora Assistente das Aulas de Campo.}
+    \\
+\Year{2018}  &
+    Evento Anual da Goodwill,
+    Honolulu, EUA -- \textbf{Assistente de Vendas.}
+    \\
+\Year{2018} &
+    \textit{Dia do Sistema Geográfico de Informação} no NOAA, Honolulu, EUA -- \textbf{Assistente.}
+	\\
+\Year{2017}  &
+	Aula Temática sobre o Brasil na Nassakeag Elementary School, Setauket, EUA -- \textbf{Palestrante.}
+	\\
+\Year{2009}  &
+	Centro de Referência Regional em Doenças Inflamatórias Intestinais na Universidade Estadual Paulista (Unesp, Botucatu) -- \textbf{Pesquisador.}
+	\\
+\end{EntriesTable}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\section*{Presentations}
+
+%Slides, posters, and abstracts for all presentations are available at
+%\href{http://www.leouieda.com/talks/}{leouieda.com/talks}
+%and
+%\\
+%\href{http://www.leouieda.com/posters/}{leouieda.com/posters}
+%\\
+%\begin{EntriesTable}
+%\Year{Future}  &
+%\Year{2018}  &
+%    \Me.
+%    Coupled Interpolation of Three-component GPS Velocities,
+%    \emph{AGU 2018},
+%    Washington DC, USA.
+%    \\
+%\end{EntriesTable}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Serviços Acadêmicos e Afiliações}
+
+%\subsection*{Committees}
+
+%\begin{EntriesTable}
+%\Year{2015} &
+%    Chairman of the Election Committee for the deans of the University and the School of
+%    Geology, Universidade do Estado do Rio de Janeiro
+%    \\
+%\end{EntriesTable}
+
+
+%\subsection*{Reviewer}
+
+\begin{EntriesTable}
+\Duration{2018}{2020} &
+	Revisora de Projetos de Iniciação Científica
+	\newline
+	Universidade Federal de São Carlos (UFSCar).
+	\\
+\Year{2015} &
+	Revisora de Poster de Iniciação Científica da Microbiologia
+	\newline
+	Universidade Federal do Rio de Janeiro (UFRJ).
+	\\
+\Year{2009} &
+	Integrante do Comitê Organizador da XIII Semana da Biologia
+	\newline
+	Universidade Estadual Paulista (UNESP, Botucatu).
+	\\
+\end{EntriesTable}
+
+
+
+%\subsection*{Affiliations}
+
+%American Geophysical Union
+%--
+%Society of Exploration Geophysicists
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Habilidades Adicionais}
+
+	\textbullet \ Bilíngue (Português e Inglês) \textbullet \ Organização e Arrecadação de Fundos para Eventos  \textbullet \ Microsoft Office \textbullet \ Básico em Python, JavaScript, HTML, CSS e \LaTeX\ \textbullet \ Processamento de Dados e Análise Estatítica
+
+
+\end{document}

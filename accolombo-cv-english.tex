@@ -1,0 +1,720 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+
+% Identifying information
+\newcommand{\Title}{Curriculum Vit\ae}
+\newcommand{\FirstName}{Ana Caroline}
+\newcommand{\LastName}{Colombo}
+\newcommand{\Initials}{AC}
+\newcommand{\MyName}{\FirstName\ \LastName}
+\newcommand{\Me}{\textbf{\LastName, \Initials}}  % For citations
+\newcommand{\Email}{acarolcolombo@gmail.com}
+%\newcommand{\Website}{}
+%\newcommand{\ORCID}{}
+\newcommand{\phone}{+44 0757 718 7908}
+%\newcommand{\Affiliation}{}
+\newcommand{\Address}{
+    St Andrew Street, Alexander Court - Ap 58, L3 5XY- Liverpool, UK.
+}
+
+% Names for citing coauthors
+\newcommand{\Amanda}{De Oliveira, AR}
+\newcommand{\Adriano}{Reimer, AE}
+\newcommand{\Brandao}{Brandão, ML}
+\newcommand{\Muthu}{Muthuraju, S}
+\newcommand{\Rafael}{Almada, RC}
+\newcommand{\Marcio}{Rodrigues, ML}
+\newcommand{\Viviane}{Saito, VM}
+\newcommand{\Teddy}{Talbot, T}
+\newcommand{\Pag}{Rizzo, J}
+\newcommand{\Zamith}{Zamith-Miranda, D}
+\newcommand{\Va}{Silva, VKA}
+\newcommand{\Jeremy}{Allegood, JC}
+\newcommand{\Casadevall}{Casadevall, A}
+\newcommand{\Maurizio}{Del Poeta, M}
+\newcommand{\Josh}{Nosanchuk, JD}
+\newcommand{\Kronstad}{Kronstad, JW}
+\newcommand{\Nayara}{Barroca, NCB}
+\newcommand{\Mariana}{Guarda, MD}
+\newcommand{\Naiara}{Silva, NT}
+\newcommand{\Antonella}{Rella, A}
+\newcommand{\Tyler}{Normile, T}
+\newcommand{\Luna}{Joffe, LS}
+\newcommand{\Patricia}{Tavares, PM}
+\newcommand{\Glauber}{Araújo, GRS}
+\newcommand{\Susana}{Frases, S}
+\newcommand{\Erika}{Orner, EP}
+\newcommand{\Amir}{Farnoud, AM}
+\newcommand{\Bettina}{Fries, BC}
+\newcommand{\Brian}{Sheridan, B}
+\newcommand{\Leo}{Nimrichter, L}
+		
+% Template configuration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Control the font size
+\usepackage{anyfontsize}
+
+% Template variables for styling
+\newcommand{\TablePad}{\vspace{-0.4cm}}
+\newcommand{\SoftwareTitle}[1]{{\bfseries #1}}
+\newcommand{\TableTitle}[1]{{\fontsize{12pt}{0}\selectfont \itshape #1}}
+\newcommand{\Invited}{[\textbf{Invited}] -- }
+
+% For fancy and multipage tables
+\usepackage{tabularx}
+\usepackage{ltablex}
+
+% Define a new environment to place all CV entries in a 2-column table.
+% Left column are the dates, right column the entries.
+\usepackage{environ}
+\NewEnviron{EntriesTable}{
+    \TablePad
+    \begin{tabularx}{\textwidth}{@{}p{0.15\textwidth} p{0.85\textwidth}@{}}
+        \BODY
+    \end{tabularx}
+}
+
+% Macros to add links
+\newcommand{\DOI}[1]{doi:\href{https://doi.org/#1}{#1}}
+\newcommand{\Youtube}[1]{[recording: \href{https://youtu.be/#1}{youtu.be/#1}]}
+% Macros to set the year and duration on the left column
+\newcommand{\Duration}[2]{\fontsize{10pt}{0}\selectfont #1--#2}
+\newcommand{\Year}[1]{\fontsize{10pt}{0}\selectfont #1}
+
+% Define command to insert month name and year as date
+\usepackage{datetime}
+\newdateformat{monthyear}{\monthname[\THEMONTH], \THEYEAR}
+
+% Set the page margins
+\usepackage[left=0.5in,right=0.5in,top=0.7in,bottom=0.7in]{geometry}
+
+% No indentation
+\setlength\parindent{0cm}
+
+% Increase the line spacing
+\renewcommand{\baselinestretch}{1.1}
+\renewcommand{\arraystretch}{1.2}
+
+% Set the spacing for sections
+\usepackage{titlesec}
+\titlespacing{\section}{0pt}{0cm}{0.3cm}
+%\titlespacing{\subsection}{0pt}{0.3cm}{0.3cm}
+
+% Remove space between items in itemize and enumerate
+\usepackage{enumitem}
+\setlist{nosep}
+
+% Use custom colors
+\usepackage[usenames,dvipsnames]{xcolor}
+
+% Set fonts. Requires compilation with xelatex
+%\usepackage{fontspec}
+%\setmainfont[BoldFont=SourceSansPro-Semibold]{SourceSansPro-Light}
+%\setmonofont{Source Code Pro}
+
+% Configure the font style for sections
+\usepackage{sectsty}
+\sectionfont{\vspace{0.1cm}\bfseries\fontsize{12pt}{0}\selectfont\uppercase}
+\subsectionfont{\vspace{0.1cm}\mdseries\fontsize{12pt}{0}\selectfont\uppercase}
+
+% Set fancy headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\chead{
+    \itshape
+    \fontsize{10pt}{12pt}\selectfont
+    \MyName
+    \hspace{0.2cm} -- \hspace{0.2cm}
+    \Title
+    \hspace{0.2cm} -- \hspace{0.2cm}
+    \monthyear\today
+}
+\rhead{}
+\cfoot{\fontsize{10pt}{0}\selectfont \thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+% Metadata for the PDF output and control of hyperlinks
+\usepackage[colorlinks=true]{hyperref}
+\hypersetup{
+    pdftitle={\MyName\ - \Title},
+    pdfauthor={\MyName},
+    linkcolor=blue,
+    citecolor=blue,
+    filecolor=black,
+    urlcolor=MidnightBlue
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+
+% No header for the first page
+\thispagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% HEADER1
+\begin{center}
+	{\fontsize{20pt}{0}\selectfont \MyName}
+	\\[0.3cm]
+	{\fontsize{10pt}{0}\selectfont
+		%\Affiliation
+		%\\[0.2cm]
+		%\Address
+		%\\[0.08cm]
+		email: \href{mailto:\Email}{\Email}
+		\, | \,
+		phone: \href{mailto:\phone}{\phone}
+		\\[0.3cm]
+		%ORCID: \href{http://orcid.org/\ORCID}{\ORCID}
+		%\, | \,
+		%website: \href{http://\Website}{\Website}
+		
+		{\fontsize{10pt}{0}\selectfont Biologist and teacher. Curious about nature, different cultures and behavior patterns. Looking for opportunities to work with outreach programs and education.}
+		\\[0.2cm]
+		
+		 {\fontsize{10pt}{0}\selectfont Versatile and collaborative, interested in short term assignments for companies or nonprofits that have an engaging workplace. With experience in biology and teaching, I enjoy working in education, health and environmental science and I am open
+			to new experiences.}
+		
+	}
+\end{center}
+
+% HEADER2
+\begin{center}
+    {\fontsize{24pt}{0}\selectfont \MyName}
+    \\[0.5cm]
+       {\fontsize{10pt}{0}\selectfont
+        %\Affiliation
+        %\\[0.2cm]
+        \Address
+        \\[0.08cm]
+        email: \href{mailto:\Email}{\Email}
+        \, | \,
+        phone: \href{mailto:\phone}{\phone}
+         \\[0.5cm]
+         {\fontsize{10pt}{0}\selectfont A constant throughout my career is the belief that knowledge should be shared and spread. I worked with 5 different research groups in the fields of neuroscience and behavior, neuropharmacology, fungal infection and biochemistry, and vaccine development research. I have teaching experience from elementary school to undergraduate level. Currently, I am expanding my knowledge in botany, outreach and teaching. I am curious about nature, different cultures and behavior patterns. I am looking for opportunities to work with science, outreach and/or education programs.}
+        %ORCID: \href{http://orcid.org/\ORCID}{\ORCID}
+        %\, | \,
+        %website: \href{http://\Website}{\Website}
+    }
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Professional Experience}
+
+\begin{EntriesTable}
+	
+	\Duration{06/2019}{08/2019}  &
+	\textbf{Arboretum Intern OR Education Department Intern}
+	\newline
+	\textit{Lyon Arboretum - Honolulu, HI, USA.}
+	\newline
+	Hybrid experience with part-time spent in the Education Department, and part-time spent across three other Departments: Grounds, Horticulture and Micropropagation and Seed Labs. \textbullet \ Developed a field-trip material for 3rd grade about plant adaptations \textbullet \ Learned about Hawaiian culture \textbullet \ Helped with k-12 summer camp \textbullet \ Guided tours through the arboretum \textbullet \ Participated in outreach at public events \textbullet \ Learned and Assisted with plant propagation techniques, identification of plants and maintenance of gardens and trails.
+	\\
+	
+	\Duration{03/2019}{06/2019}  &
+	\textbf{Provider Credentialing Assistant}
+	\newline
+	\textit{HMAA/HWMG - Honolulu, HI, USA.}
+	\newline
+	\textbullet \ Reached out to providers for credentialing in the health insurance company system \textbullet \ Organized data and files.
+	\\
+	
+	\Duration{08/2016}{12/2017}  &
+	\textbf{Research Support Specialist},
+	\newline
+	\textit{Stony Brook University, Stony Brook, NY, USA.}
+	\newline   
+	\textbullet \ Managed projects independently \textbullet \ Established external collaborations \textbullet \ Processed and analyzed data \textbullet \ Authored two published scientific papers \textbullet \ Presented in conferences \textbullet\ Conducted research in biomedical topics and performed laboratory experiments. 
+	\\
+	
+\end{EntriesTable}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Education}
+
+\begin{EntriesTable}
+    \Year{2018}  &
+    \textbf{PhD in Biological Chemistry}, Federal University of Rio de Janeiro (UFRJ), Brazil.
+    \\
+    \Year{2014}  &
+    \textbf{MSc in Psychobiology}, University of São Paulo (USP), Brazil.
+    \\
+    \Year{2011}  &
+    \textbf{BSc in Biology}, State University of São Paulo (UNESP), Brazil.
+    \\
+    \Year{2010}  &
+    \textbf{Licentiate degree in Biology}, State University of São Paulo (UNESP), Brazil.
+    \newline
+    \textit{Undergraduate level degree for teaching in primary and secondary education.}
+    
+\end{EntriesTable}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section*{Grants \& Fellowships}
+
+%\begin{EntriesTable}
+%    \Duration{2018}{2020}  &    NSF-EAR: ``The EarthScope/GMT Analysis and Visualization Toolbox''.
+%    PI: \Paul, \textbf{co-PI}: \Me, co-PI: \Bridget.
+%    University of Hawai'i at M\={a}noa.
+%    Amount: \$174,975.
+%    Award ID: 1829371.
+%\end{EntriesTable}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Research Experience}
+
+\begin{EntriesTable}
+	
+	\Duration{2010}{2016}  &
+	\textbf{Neuroscience, Behavior and Pharmacology}
+	\newline
+	 \textbullet \ Small animals models (mouse, rat and fish) \textbullet \ Behavioral tests (fear and anxiety, memory and depression), such as: catalepsy, open field and contextual fear conditioning, ultrasonic vocalization recording, elevated plus-maze and fear potentiated startle, novel object recognition, tail suspension \textbullet \ Local and systemic drug injection \textbullet \ Stereotaxic surgery \textbullet \ Perfusion \textbullet \ Histology and tissue staining.
+	\\
+	
+	\Duration{2014}{2018}  &
+	\textbf{Microbiology, Biochemistry and Immunology}
+	\newline
+	\textbullet \ Mouse model \textbullet \ Intranasal infection \textbullet \ Gavage technique \textbullet \ Systemic drug injection \textbullet \ Dissection \textbullet \ CFU \textbullet \ Histology and tissue staining \textbullet \ Galleria mellonela infection model \textbullet \ Primary culture of rat astrocytes and neurons \textbullet \ Cell line culture \textbullet \ Hybridoma culture \textbullet \ Immunocytochemistry and Immunohistochemistry \textbullet \ Dot blot \textbullet \ MTT assay \textbullet \ Antibody biotinylation \textbullet \ Cultivation of pathogen yeast \textbullet \ Media preparation \textbullet \ Urease and melanin assay \textbullet \ Fungi growth and pH tests \textbullet \ Polysaccharide isolation and quantification \textbullet \ Vesicle purification and quantification \textbullet \ Enzyme-linked immunosorbent assay (ELISA) and Dubois colorimetric assay  \textbullet \ Scanning Electron Microscopy (SEM)  \textbullet \ Thin-layer chromatography (TLC) \textbullet \ Western blot \textbullet \ Southern blot \textbullet \ Flow cytometry \textbullet \ Lipid extraction and quantification \textbullet \ DNA purification  \textbullet \ Biobalistic DNA delivery method 
+	\\
+
+	
+\end{EntriesTable}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Awards}
+
+\begin{EntriesTable}
+	\Duration{2014}{2018}  &
+	National Council for Scientific and Technological Development (CNPq), Brazil. \textbf{PhD Research Scholarship.}
+	\\
+	\Duration{2012}{2014}  &
+	São Paulo Research Foundation (FAPESP), Brazil. \textbf{Masters Research Scholarship.}
+	\\
+	\Year{2012}  &
+	National Council for Scientific and Technological Development (CNPq), Brazil. \textbf{Masters Research Scholarship.} (3 months)
+	\\
+	\Year{2010}  &
+	Coordination for the Improvement of Higher Education Personnel (CAPES), Brazil. \textbf{Undergraduate Institutional Program of Teaching Initiation
+		Scholarship.} (9 months)
+	\\
+	\Year{2009}  &
+	State University of São Paulo (UNESP, Botucatu), Brazil. \textbf{Undergraduate Academic Support and Outreach Scholarship.} (6 months)
+\end{EntriesTable}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Publications}
+
+%\subsection*{Peer-Reviewed}
+
+\begin{EntriesTable}
+\Year{2019}  &
+    \Me, \Antonella, \Tyler, \Luna, \Patricia, \Glauber, \Susana, \Erika, \Amir, \Bettina, \Brian, \Leo, \Marcio, \Maurizio.
+ 	\emph{Cryptococcus neoformans} glucuronoxylomannan and sterylglucoside are required for host protection in an animal vaccination model.
+    \emph{mBio},
+    \DOI{10.1128/mBio.02909-18}.
+    \\
+\Year{2019}  &
+    \Nayara, \Mariana, \Naiara, \Me, \Adriano, \Brandao, \Amanda. Influence of aversive stimulation on haloperidol-induced catalepsy in rats.
+    Accepted at \emph{Behavioural Pharmacology}.
+   \DOI{10.1097/FBP.0000000000000462}.
+    \\
+\Year{2018}  &
+    \Pag, \Me, \Zamith, \Va, \Jeremy, \Casadevall, \Maurizio, \Josh, \Kronstad, \Marcio.
+    The putative flippase Apt1 is required for intracellular membrane
+    architecture and biosynthesis of polysaccharide and lipids in
+    \emph{Cryptococcus neoformans}.
+    \emph{BBA - Molecular Cell Research},
+    \DOI{10.1016/j.bbamcr.2017.12.007}.
+    \\
+\Year{2015}  &
+	\Brandao, \Amanda, \Muthu, \Me, \Viviane, \Teddy.
+	Dual role of dopamine D2-like receptors in the mediation of conditioned
+	and unconditioned fear.
+	\emph{FEBS Letters},
+\DOI{10.1016/j.febslet.2015.02.036}.
+	\\
+	~ &
+	\Me, \Marcio.
+	Fungal colonization of the brain: anatomopathological
+	aspects of neurological cryptococcosis.
+	\emph{Annals of the Brazilian Academy of Sciences},
+	\DOI{10.1590/0001-3765201520140704}.
+	\\
+\Year{2014}  &
+	\Amanda, \Me, \Muthu, \Rafael, \Brandao.
+	Dopamine D2-like receptors modulate unconditioned
+	fear: Role of the inferior colliculus.
+	\emph{Plos One},
+	\DOI{10.1371/journal.pone.0104228}.
+	\\
+\Year{2013}  &
+	\Me, \Amanda, \Adriano, \Brandao.
+	Dopaminergic mechanisms underlying catalepsy, fear and anxiety: Do
+	they interact?.
+	\emph{Behavioural Brain Research},
+	\DOI{10.1016/j.bbr.2013.10.002}.
+	\\
+\end{EntriesTable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Selected Publications}
+
+%\subsection*{Peer-Reviewed}
+
+\begin{EntriesTable}
+	\Year{2019}  &
+	\Me, \Antonella, \textit{et al.}
+	\emph{Cryptococcus neoformans} glucuronoxylomannan and sterylglucoside are required for host protection in an animal vaccination model.
+	\emph{mBio},
+	 \DOI{10.1128/mBio.02909-18}.
+	\\
+	\Year{2015}  &
+	\Me, \Marcio.
+	Fungal colonization of the brain: anatomopathological
+	aspects of neurological cryptococcosis.
+	\emph{Annals of the Brazilian Academy of Sciences},
+	\DOI{10.1590/0001-3765201520140704}.
+	\\
+	\Year{2013}  &
+	\Me, \Amanda, \textit{et al.}
+	Dopaminergic mechanisms underlying catalepsy, fear and anxiety: Do
+	they interact?.
+	\emph{Behavioural Brain Research},
+	\DOI{10.1016/j.bbr.2013.10.002}.
+	\\
+\end{EntriesTable}
+
+
+
+%\subsection*{Peer-Reviewed Conference proceedings}
+
+%\begin{EntriesTable}
+%\Year{2014}  &
+%    \Figura, \Val, \Me, \Bi, \JB.
+%    A Single Euler Solution Per Anomaly,
+%    \emph{76th EAGE Conference and Exhibition 2014},
+%    \DOI{10.3997/2214-4609.20140891}.
+%    \\
+%\end{EntriesTable}
+
+%\subsection*{Open Datasets}
+
+%\begin{EntriesTable}
+%\end{EntriesTable}
+
+
+%\subsection*{Open-source Software}
+
+%\end{EntriesTable}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Teaching}
+
+%\subsection*{Undergraduate -- instructor}
+
+\begin{EntriesTable}
+    \Duration{2018}{2019}  &
+    Botany -- Kindergarten to 4th Grade (Assistant Teacher)
+    \newline
+    Education Department at Lyon Arboretum, Honolulu, USA.
+    \\
+    \Year{2015}  &
+    Biochemistry -- Undergraduate in Medicine (Assistant Teacher)
+    \newline
+    Federal University of Rio de Janeiro, Brazil.
+    \\
+    \Year{2015}  &
+    Immune endocrine neuro system -- Graduate in Biochemistry (Group Coordinator)
+    \newline
+    Federal University of Rio de Janeiro, Brazil.
+    \\
+    \Year{2010}  &
+    Biology -- High School (Teacher and Assistant)
+    \newline
+    State School Professor Francisco Guedelha, Botucatu, Brazil.
+    \\
+    \Year{2007}  &
+    Literature -- Pre-university preparatory course (Teacher)
+    \newline
+    State University of São Paulo, Brazil.
+\end{EntriesTable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Teaching Internships}
+
+\begin{EntriesTable}
+	\Duration{10/2018}{03/2019}  &
+	\textbf{Assistant Teacher} -- Kindergarten to 4th Grade
+	\newline
+	\textit{Education Department at Lyon Arboretum, Honolulu, USA.}
+	\newline
+	\textbullet \ Assisted and taught field trips and classes \textbullet \ Organized and managed the classrooms.
+	\\
+	\Year{2015 (10 classes)}  &
+	\textbf{Assistant Teacher} -- Undergraduate Biochemistry
+	\newline
+	\textit{Federal University of Rio de Janeiro, Brazil.}
+	\newline
+	\textbullet \ Developed guided practice worksheets \textbullet \ Created and implemented formative assessment \textbullet \ Prepared and presented theoretical classes \textbullet \ Designed and applied final exams.
+	\\
+	\Year{2015 (10 classes)}  &
+	\textbf{Group Supervisor} -- Graduate Immune-neuro-endocrine System 
+	\newline
+	\textit{Federal University of Rio de Janeiro, Brazil.}
+	\newline
+	\textbullet \ Guided and helped a group of seven students to prepare and teach theoretical and creative classes.
+	\\
+	\Duration{03/2010}{12/2010}  &
+	\textbf{Assistant Teacher} -- Biology for High School students
+	\newline
+	\textit{State School Professor Francisco Guedelha, Botucatu, Brazil.}
+	\newline
+	\textbullet \ Helped to develop and organize the first science fair of the school \textbullet \ Taught theoretical and practical biology classes \textbullet \ Participated in group meetings \textbullet \ Helped to design and apply surveys to assess student's goals. 
+	\\
+	\Year{2007 (9 classes)}  &
+	\textbf{Volunteer Teacher} -- Literature for a pre-university preparatory course 
+	\newline
+	\textit{State University of São Paulo, Brazil.}
+	\newline
+	\textbullet \ Prepared and taught classes.
+	
+\end{EntriesTable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\subsection*{Workshops and Short Courses}
+
+%\begin{EntriesTable}
+%\Year{future}  &
+%\Year{201}  &
+%    Best Practices for Modern Open-Source Research Codes
+%    \newline
+%    AGU Fall Meeting 2018
+%    \\
+% 
+%\end{EntriesTable}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section*{Student supervision}
+
+%\begin{EntriesTable}
+%\Duration{2017}{}  &
+%    Santiago R. Soler (PhD student -- co-Advisor)
+%    \newline
+%    Instituto Geofísico Sismológico Volponi, Universidad Nacional de San Juan, Argentina.
+%    \newline
+%    Advisor: Mario E. Gimenez
+%	\\
+%\end{EntriesTable}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Option1
+\section*{Outreach and Volunteering}
+
+\begin{EntriesTable}
+\Duration{2018}{2019}  &
+    Volunteer for the Lyon Arboretum, Honolulu, USA -- \textbf{Gift Shop Clerk.}
+    \\
+\Duration{2018}{2019} &
+    Volunteer for the Lyon Arboretum, Honolulu, USA -- \textbf{Elementary School Field Trip Volunteer.}
+    \\
+\Year{2018}  &
+    Volunteer for the \textit{Goodwill Goes Glam} at Goodwill,
+    Honolulu, USA -- \textbf{Retail.}
+    \\
+\Year{2018} &
+    Volunteer for the \textit{Geographic Information System Day} at NOAA, Honolulu, USA -- \textbf{Assistant.} 
+	\\
+\Year{2017}  &
+	Volunteer for a special class about Brazil at Nassakeag Elementary School, Setauket, USA -- \textbf{Speaker/Teacher.}
+	\\
+\Year{2009}  &
+	Center of Regional Reference in Intestinal Inflammatory Disease at State University of São Paulo, Brazil -- \textbf{Patient survey.}
+	\\
+\end{EntriesTable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Option2
+\section*{Volunteering and Outreach}
+
+\begin{EntriesTable}
+	\Duration{10/2018}{03/2019}  &
+	\textbf{Assistant for Children's Education Program},
+	%	\newline
+	\textit{Lyon Arboretum, Honolulu, USA.}
+	\newline
+	\textbullet \ Taught hour long, elementary level classes \textbullet\ Assisted students with difficult tasks \textbullet \ Prepared classroom resources.
+	\\
+	\Duration{08/2018}{03/2019}  &
+	\textbf{Gift Shop Clerk},
+	%	\newline
+	\textit{Lyon Arboretum, Honolulu, USA.}
+	\newline
+	\textbullet \ Greeted and helped visitors with general information \textbullet \ Operated the cash register \textbullet \ Organized the store. 
+	\\
+	\Year{2018}  &
+	\textbf{Retail Helper for Goodwill Goes Glam event},
+	%	\newline
+	\textit{Goodwill, Honolulu, USA.}
+	\newline
+	\textbullet \ Duties included customer service and organizing sales inventory.
+	\\
+	\Year{2017}  &
+	\textbf{Invited speaker},
+	%	\newline
+	\textit{Nassakeag Elementary School, Setauket, USA.}
+	\newline
+	\textbullet \ Created and presented a class about Brazil.
+	\\
+	\Year{2009}  &
+	\textbf{Research Interviewer},
+	%	\newline
+	\textit{State University of São Paulo, Brazil.}
+	\newline
+	\textbullet \ Collected patient information \textbullet \ Explained research goals and consent form \textbullet \ Established contact between clinic and research group.
+	\\
+	\Duration{04/2007}{12/2010}  &
+	\textbf{Accountant},
+	%	\newline
+	\textit{ Graduation Party Planning Committee, Brazil.}
+	\newline
+	\textbullet \ Surpassed the fundraising goal \textbullet \ Trusted for the position by peers \textbullet \ Helped to organize fundraising events  \textbullet \ Designed and sold products \textbullet \ Participated in regular meetings and
+	committee's decisions.
+	\newline
+\end{EntriesTable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\section*{Presentations}
+
+%Slides, posters, and abstracts for all presentations are available at
+%\href{http://www.leouieda.com/talks/}{leouieda.com/talks}
+%and
+%\\
+%\href{http://www.leouieda.com/posters/}{leouieda.com/posters}
+%\\
+%\begin{EntriesTable}
+%\Year{Future}  &
+%\Year{2018}  &
+%    \Me.
+%    Coupled Interpolation of Three-component GPS Velocities,
+%    \emph{AGU 2018},
+%    Washington DC, USA.
+%    \\
+%\end{EntriesTable}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Academic Service \& Affiliations}
+
+%\subsection*{Committees}
+
+%\begin{EntriesTable}
+%\Year{2015} &
+%    Chairman of the Election Committee for the deans of the University and the School of
+%    Geology, Universidade do Estado do Rio de Janeiro
+%    \\
+%\end{EntriesTable}
+
+
+%\subsection*{Reviewer}
+
+\begin{EntriesTable}
+\Year{2019} &
+	Ad hoc referee of undergraduate scientific projects 
+	Biology
+	\newline
+	Federal University of São Carlos, Brazil.
+	\\
+\Year{2018} &
+    Ad hoc referee of undergraduate scientific projects 
+    Biology
+    \newline
+    Federal University of São Carlos, Brazil.
+    \\
+\Year{2015} &
+	Ad hoc referee of undergraduate scientific posters 
+	Microbiology
+	\newline
+	Federal University of Rio de Janeiro, Brazil.
+	\\
+\Year{2009} &
+	Organizing committee of the XIII Biology Week
+	\newline
+	State University of São Paulo, Brazil.
+	\\
+\end{EntriesTable}
+
+
+
+%\subsection*{Affiliations}
+
+%American Geophysical Union
+%--
+%Society of Exploration Geophysicists
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Continuing Education}
+
+%\subsection*{Peer-Reviewed}
+
+\begin{EntriesTable}
+	\Year{2019 (1 month)}  &
+	\textbf{101 Web Development} -- DevLeague - Honolulu, HI, USA.
+	\\
+\end{EntriesTable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Additional Skills}
+
+	\textbullet \ Bilingual (English and Portuguese) \textbullet \ Fundraising and Event Organization \textbullet \ Microsoft Office \textbullet \ Basic Python, JavaScript, HTML, CSS and \LaTeX\ \textbullet \ Basic Image Editing and Vector Graphics Software \textbullet \ Data Processing and Statistical Analysis
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Languages}
+
+\TablePad
+\begin{tabularx}{\textwidth}{@{}p{0.15\textwidth} p{0.85\textwidth}@{}}
+	Portuguese & Native
+	\\
+	English & Advanced
+\end{tabularx}
+
+\section*{Extras}
+
+\begin{EntriesTable}
+	\Year{2019} &
+	Dog sitting -- Honolulu, USA.
+	\\
+	\Year{2018} &
+	Babysitting -- Honolulu, USA.
+	\\
+	\Year{2017} &
+	Babysitting -- Setauket, USA.
+	\\
+	\Duration{2007}{2010} &
+	Graduation Party Planning Committee -- Botucatu, Brazil.
+	\\
+\end{EntriesTable}
+
+\end{document}
