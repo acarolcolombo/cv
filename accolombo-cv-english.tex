@@ -1,5 +1,11 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+A general CV with all my experiences
+
+Based on the template of the Leo Uieda's CV
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \documentclass[11pt, a4paper]{article}
-\usepackage[utf8]{inputenc}
 
 % Identifying information
 \newcommand{\Title}{Curriculum Vit\ae}
@@ -8,14 +14,12 @@
 \newcommand{\Initials}{AC}
 \newcommand{\MyName}{\FirstName\ \LastName}
 \newcommand{\Me}{\textbf{\LastName, \Initials}}  % For citations
-\newcommand{\Email}{acarolcolombo@gmail.com}
-%\newcommand{\Website}{}
+\newcommand{\Email}{contact@acarolcolombo.com}
+\newcommand{\Website}{acarolcolombo.com}
 %\newcommand{\ORCID}{}
-\newcommand{\phone}{+44 0757 718 7908}
+%\newcommand{\phone}{}
 %\newcommand{\Affiliation}{}
-\newcommand{\Address}{
-    St Andrew Street, Alexander Court - Ap 58, L3 5XY- Liverpool, UK.
-}
+%\newcommand{\Address}{}
 
 % Names for citing coauthors
 \newcommand{\Amanda}{De Oliveira, AR}
@@ -55,11 +59,14 @@
 % Control the font size
 \usepackage{anyfontsize}
 
+% Icon fonts (requires using xelatex or luatex)
+\usepackage[fixed]{fontawesome5}
+\usepackage{academicons}
+
 % Template variables for styling
 \newcommand{\TablePad}{\vspace{-0.4cm}}
 \newcommand{\SoftwareTitle}[1]{{\bfseries #1}}
 \newcommand{\TableTitle}[1]{{\fontsize{12pt}{0}\selectfont \itshape #1}}
-\newcommand{\Invited}{[\textbf{Invited}] -- }
 
 % For fancy and multipage tables
 \usepackage{tabularx}
@@ -77,10 +84,13 @@
 
 % Macros to add links
 \newcommand{\DOI}[1]{doi:\href{https://doi.org/#1}{#1}}
-\newcommand{\Youtube}[1]{[recording: \href{https://youtu.be/#1}{youtu.be/#1}]}
+\newcommand{\GitHub}[1]{\newline • Code: \faGithub\ \href{https://github.com/#1}{#1}}
+
+
 % Macros to set the year and duration on the left column
 \newcommand{\Duration}[2]{\fontsize{10pt}{0}\selectfont #1--#2}
 \newcommand{\Year}[1]{\fontsize{10pt}{0}\selectfont #1}
+\newcommand{\Ongoing}{}
 
 % Define command to insert month name and year as date
 \usepackage{datetime}
@@ -94,12 +104,20 @@
 
 % Increase the line spacing
 \renewcommand{\baselinestretch}{1.1}
+% and the spacing between rows in tables
 \renewcommand{\arraystretch}{1.2}
 
 % Set the spacing for sections
-\usepackage{titlesec}
-\titlespacing{\section}{0pt}{0cm}{0.3cm}
+%\usepackage{titlesec}
+%\titlespacing{\section}{0pt}{0cm}{0.3cm}
 %\titlespacing{\subsection}{0pt}{0.3cm}{0.3cm}
+
+% Disable number of sections. Use this instead of "section*" so that the sections still
+% appear as PDF bookmarks. Otherwise, would have to add the table of contents entries
+% manually.
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
 
 % Remove space between items in itemize and enumerate
 \usepackage{enumitem}
@@ -109,9 +127,7 @@
 \usepackage[usenames,dvipsnames]{xcolor}
 
 % Set fonts. Requires compilation with xelatex
-%\usepackage{fontspec}
-%\setmainfont[BoldFont=SourceSansPro-Semibold]{SourceSansPro-Light}
-%\setmonofont{Source Code Pro}
+%\usepackage{fontspec} % required to make older xelatex compile with UTF8
 
 % Configure the font style for sections
 \usepackage{sectsty}
@@ -156,52 +172,24 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% HEADER1
-\begin{center}
-	{\fontsize{20pt}{0}\selectfont \MyName}
-	\\[0.3cm]
-	{\fontsize{10pt}{0}\selectfont
-		%\Affiliation
-		%\\[0.2cm]
-		%\Address
-		%\\[0.08cm]
-		email: \href{mailto:\Email}{\Email}
-		\, | \,
-		phone: \href{mailto:\phone}{\phone}
-		\\[0.3cm]
-		%ORCID: \href{http://orcid.org/\ORCID}{\ORCID}
-		%\, | \,
-		%website: \href{http://\Website}{\Website}
-		
-		{\fontsize{10pt}{0}\selectfont Biologist and teacher. Curious about nature, different cultures and behavior patterns. Looking for opportunities to work with outreach programs and education.}
-		\\[0.2cm]
-		
-		 {\fontsize{10pt}{0}\selectfont Versatile and collaborative, interested in short term assignments for companies or nonprofits that have an engaging workplace. With experience in biology and teaching, I enjoy working in education, health and environmental science and I am open
-			to new experiences.}
-		
-	}
-\end{center}
-
-% HEADER2
-\begin{center}
-    {\fontsize{24pt}{0}\selectfont \MyName}
-    \\[0.5cm]
-       {\fontsize{10pt}{0}\selectfont
-        %\Affiliation
-        %\\[0.2cm]
-        \Address
-        \\[0.08cm]
-        email: \href{mailto:\Email}{\Email}
-        \, | \,
-        phone: \href{mailto:\phone}{\phone}
-         \\[0.5cm]
-         {\fontsize{10pt}{0}\selectfont A constant throughout my career is the belief that knowledge should be shared and spread. I worked with 5 different research groups in the fields of neuroscience and behavior, neuropharmacology, fungal infection and biochemistry, and vaccine development research. I have teaching experience from elementary school to undergraduate level. Currently, I am expanding my knowledge in botany, outreach and teaching. I am curious about nature, different cultures and behavior patterns. I am looking for opportunities to work with science, outreach and/or education programs.}
-        %ORCID: \href{http://orcid.org/\ORCID}{\ORCID}
-        %\, | \,
-        %website: \href{http://\Website}{\Website}
-    }
-\end{center}
-
+% HEADER
+{\fontsize{20pt}{0}\selectfont \MyName}	\\[0.3cm]
+\rule{\textwidth}[0.2pt]
+\begin{minipage}[t]{0.595\textwidth}
+	%\Affiliation
+	%\\
+	%\Address
+	ABCDE EJAJHA
+\end{minipage}
+\begin{minipage}[t]{0.405\textwidth}
+  \begin{flushright}
+  Last updated: \monthyear\today
+  \\
+    email: \href{mailto:\Email}{\Email}
+    \\
+    Website: \href{https://www.\PersonalWebsite}{\PersonalWebsite}
+  \end{flushright}
+\end{minipage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Professional Experience}
