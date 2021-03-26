@@ -16,5 +16,5 @@ clean:
 show: english 
 	xdg-open output/accolombo-cv-english.pdf 
 
-show pt: portuguese
+show-pt: portuguese
 	xdg-open output/accolombo-cv-portuguese.pdf 
