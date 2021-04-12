@@ -10,11 +10,13 @@ english: output/accolombo-cv-english.pdf
 
 portuguese: output/accolombo-cv-portuguese.pdf
 
-clean: 
+clean:
 	rm -r output
 
-show: english 
-	xdg-open output/accolombo-cv-english.pdf 
+show: english
+	@ # Redirect stdout and stderr to /dev/null for silent execution
+	xdg-open output/accolombo-cv-english.pdf > /dev/null 2>&1 &
 
 show-pt: portuguese
-	xdg-open output/accolombo-cv-portuguese.pdf 
+	@ # Redirect stdout and stderr to /dev/null for silent execution
+	xdg-open output/accolombo-cv-portuguese.pdf > /dev/null 2>&1 &
