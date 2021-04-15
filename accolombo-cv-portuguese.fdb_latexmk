@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1618409119 "output/accolombo-cv-portuguese.xdv" "output/accolombo-cv-portuguese.pdf" "output/accolombo-cv-portuguese" 1618409119
-  "output/accolombo-cv-portuguese.xdv" 1618409119 121520 00d1fd09df7de8a108f55dfc4f7de15c "xelatex"
+["xdvipdfmx"] 1618492859 "output/accolombo-cv-portuguese.xdv" "output/accolombo-cv-portuguese.pdf" "output/accolombo-cv-portuguese" 1618492859
+  "output/accolombo-cv-portuguese.xdv" 1618492859 121592 6d0dc53264f836e0fb41dd074e862b6a "xelatex"
   (generated)
   "output/accolombo-cv-portuguese.pdf"
-["xelatex"] 1618409118 "accolombo-cv-portuguese.tex" "output/accolombo-cv-portuguese.xdv" "accolombo-cv-portuguese" 1618409119
+["xelatex"] 1618492857 "accolombo-cv-portuguese.tex" "output/accolombo-cv-portuguese.xdv" "accolombo-cv-portuguese" 1618492859
   "/etc/texmf/web2c/texmf.cnf" 1618197741 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -89,12 +89,12 @@
   "/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty" 1417732693 4962 9c1069474ff71dbc47d5006555e352d3 ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
-  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1618409100 3335530 123dc5001e8a52b0f05d2edd7fcc7675 ""
-  "accolombo-cv-portuguese.tex" 1618408983 22572 dec7b5f3d8c56780bca091754f2558d8 ""
-  "output/accolombo-cv-portuguese.aux" 1618409119 1389 18b4dd2b5ea46dc1a8b833aa767f2d9a "xelatex"
-  "output/accolombo-cv-portuguese.out" 1618409119 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
+  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1618492840 3335532 36dff69ebaf965e2ccb80e787a928d37 ""
+  "accolombo-cv-portuguese.tex" 1618492730 22579 6831e67ab490c977a4089c8b5325498b ""
+  "output/accolombo-cv-portuguese.aux" 1618492859 1389 18b4dd2b5ea46dc1a8b833aa767f2d9a "xelatex"
+  "output/accolombo-cv-portuguese.out" 1618492859 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
   (generated)
-  "output/accolombo-cv-portuguese.out"
-  "output/accolombo-cv-portuguese.xdv"
   "output/accolombo-cv-portuguese.log"
   "output/accolombo-cv-portuguese.aux"
+  "output/accolombo-cv-portuguese.out"
+  "output/accolombo-cv-portuguese.xdv"
