@@ -1,10 +1,10 @@
 # Fdb version 3
-["xdvipdfmx"] 1624633710 "output/accolombo-cv-english.xdv" "output/accolombo-cv-english.pdf" "output/accolombo-cv-english" 1624633710
-  "output/accolombo-cv-english.xdv" 1624633710 117896 eac11816953d1cee6dc52d1453419082 "xelatex"
+["xdvipdfmx"] 1624819018 "output/accolombo-cv-english.xdv" "output/accolombo-cv-english.pdf" "output/accolombo-cv-english" 1624819018
+  "output/accolombo-cv-english.xdv" 1624819018 114728 74663ca96e1c66971ec11b9b8f0646a4 "xelatex"
   (generated)
   "output/accolombo-cv-english.pdf"
-["xelatex"] 1624633709 "accolombo-cv-english.tex" "output/accolombo-cv-english.xdv" "accolombo-cv-english" 1624633710
-  "/etc/texmf/web2c/texmf.cnf" 1624245872 475 c0e671620eb5563b2130f56340a5fde8 ""
+["xelatex"] 1624819017 "accolombo-cv-english.tex" "output/accolombo-cv-english.xdv" "accolombo-cv-english" 1624819018
+  "/etc/texmf/web2c/texmf.cnf" 1623669699 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1136768653 1528 abec98dbc43e172678c11b3b9031252a ""
@@ -89,12 +89,12 @@
   "/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty" 1417732693 4962 9c1069474ff71dbc47d5006555e352d3 ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
-  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1624633695 3335528 663a8db65e490bcc9d19add42790b941 ""
-  "accolombo-cv-english.tex" 1624633584 22018 8b80048e915e0aa35d135bb091e272d1 ""
-  "output/accolombo-cv-english.aux" 1624633710 1389 18b4dd2b5ea46dc1a8b833aa767f2d9a "xelatex"
-  "output/accolombo-cv-english.out" 1624633710 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
+  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1624819009 3335529 bde47e965e3389445f9c00c98d7490ab ""
+  "accolombo-cv-english.tex" 1624818897 22029 88a84f7ab50c2211b5001be1993a0c4e ""
+  "output/accolombo-cv-english.aux" 1624819018 1389 18b4dd2b5ea46dc1a8b833aa767f2d9a "xelatex"
+  "output/accolombo-cv-english.out" 1624819018 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
   (generated)
+  "output/accolombo-cv-english.out"
+  "output/accolombo-cv-english.log"
   "output/accolombo-cv-english.xdv"
   "output/accolombo-cv-english.aux"
-  "output/accolombo-cv-english.log"
-  "output/accolombo-cv-english.out"
